@@ -19,7 +19,7 @@ const MainContainer = () => {
 
 
   return (
-    <div className='overflow-x-hidden'>
+    <div className='-z-10' >
         
       <VideoTitle title={original_title} overview={overview}  />
       <VideoBackground movieId ={id}/> 

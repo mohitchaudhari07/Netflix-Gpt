@@ -90,11 +90,11 @@ const Login = () => {
 
   };
   return (
-    <div className='h-screen'>
+    <div className=''>
       
       <Header/>
-      <img className='absolute' src='https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/IN-en-20241111-TRIFECTA-perspective_149877ab-fcbd-4e4f-a885-8d6174a1ee81_medium.jpg' alt='background'/>
-      <div className='w-[100%] h-full bg-black opacity-50 absolute left-0 top-0'></div>
+      <img className='absolute ' src='https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/IN-en-20241111-TRIFECTA-perspective_149877ab-fcbd-4e4f-a885-8d6174a1ee81_medium.jpg' alt='background'/>
+      <div className='w-full h-[854px] bg-black opacity-50 absolute left-0 top-0'></div>
 
       <form onSubmit={(e) => e.preventDefault()} className='absolute flex flex-col px-10 py-10 w-3/12 text-white bg-black bg-opacity-75 rounded-md left-1/2 top-1/2 translate-y-[-50%] translate-x-[-50%]'>
        
