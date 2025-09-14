@@ -161,7 +161,7 @@ const GptSearch = () => {
 
     console.log("TMDB results:", tmdbResults);
 
-    dispatch(addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults, }));
+    dispatch(addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults}));
   };
 
   return (
