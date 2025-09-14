@@ -117,21 +117,37 @@ const GptSearch = () => {
   };
 
 
-  async function getGroqChatCompletion() {
-    const gptQuery = `
-      Act as a movie recommendation system and suggest 5 Hindi movies for the query: "${
-        searchText.current.value
-      }".
-      ⚠️ Very Important: Return ONLY a JSON array of movie names like this:
-      ["Gadar","Sholay","Don","Golmaal","Koi Mil Gaya"]
-    `;
+  // async function getGroqChatCompletion() {
+  //   const gptQuery = `
+  //     Act as a movie recommendation system and suggest 5 Hindi movies for the query: "${
+  //       searchText.current.value
+  //     }".
+  //     ⚠️ Very Important: Return ONLY a JSON array of movie names like this:
+  //     ["Gadar","Sholay","Don","Golmaal","Koi Mil Gaya"]
+  //   `;
 
-    return groq.chat.completions.create({
-      messages: [{ role: "user", content: gptQuery }],
-      model: "llama3-8b-8192",
-    });
-  }
+  //   return groq.chat.completions.create({
+  //     messages: [{ role: "user", content: gptQuery }],
+  //     model: "llama3-8b-8192",
+  //   });
+  // }
+async function getGroqChatCompletion() {
+  const gptQuery = `
+    Act as a movie recommendation system and suggest 5 Hindi movies for the query: "${searchText.current.value}".
+    Return ONLY a JSON array like:
+    ["Gadar","Sholay","Don","Golmaal","Koi Mil Gaya"]
+  `;
 
+  const response = await fetch("/api/gpt", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query: gptQuery }),
+  });
+
+  return response.json();
+}
+
+ 
   const handleSearchClick = async () => {
     console.log("Searching for:", searchText.current.value);
 
