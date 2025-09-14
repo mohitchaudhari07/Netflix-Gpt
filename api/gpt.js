@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.GROQ_API_KEY}`, // Safe in Vercel
+        Authorization: `Bearer ${process.env.REACT_APP_GROQ_KEY}`, // Safe in Vercel
       },
       body: JSON.stringify({
         model: "llama-3.1-8b-instant",
