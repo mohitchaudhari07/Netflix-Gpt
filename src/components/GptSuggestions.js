@@ -10,18 +10,14 @@ const GptSuggestions = () => {
     <div className="absolute h-[520px] top-60 md:top-44 w-screen overflow-x-clip flex justify-center gap-3 text-white">
       <div className="relative flex flex-col overflow-x-clip overflow-scroll scrollbar-hide text-white">
         
-        // {movieNames.map((movieName,index) => (
-        //   <MovieList
-        //     key={movieName}
-        //     title={movieName}
-        //     movies={movieResults[index]}
-        //   />
-        // ))}
-          {movieNames.map((movieName, index) => (
-           <MovieList
+        {movieNames.map((movieName,index) => (
+          <MovieList
             key={movieName}
-           title={movieName}
-            movies={[movieResults[index]]} // wrap single object in array
+            title={movieName}
+            movies={movieResults[index]}
+          />
+        ))}
+         
   />
 ))}
 
